@@ -1,0 +1,9 @@
+# Ignore large files from Unity PackageCache
+Library/
+Logs/
+UserSettings/
+ProjectSettings/
+obj/
+.vscode/
+Temp/
+*.blob
