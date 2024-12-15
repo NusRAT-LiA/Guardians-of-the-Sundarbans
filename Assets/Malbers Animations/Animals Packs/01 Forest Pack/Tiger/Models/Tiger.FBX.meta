@@ -1,94 +1,260 @@
 fileFormatVersion: 2
 guid: 9f271cac34f8a384fbd96577f2846b24
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: CG
-    100002: Ear L
-    100004: Ear R
-    100006: Eye L
-    100008: Eye R
-    100010: Head
-    100012: Jaw
-    100014: L Calf
-    100016: L Clavicle
-    100018: L Foot
-    100020: L Forearm
-    100022: L Hand
-    100024: L HorseLink
-    100026: L Thigh
-    100028: L UpperArm
-    100030: Neck
-    100032: Pelvis
-    100034: R Calf
-    100036: R Clavicle
-    100038: R Foot
-    100040: R Forearm
-    100042: R Hand
-    100044: R HorseLink
-    100046: R Thigh
-    100048: R UpperArm
-    100050: Spine
-    100052: Spine1
-    100054: Spine2
-    100056: Tail
-    100058: Tail1
-    100060: Tail2
-    100062: Tail3
-    100064: Tail4
-    100066: Tail5
-    100068: //RootNode
-    100070: Tiger01
-    100072: Tiger
-    100074: Root
-    400000: CG
-    400002: Ear L
-    400004: Ear R
-    400006: Eye L
-    400008: Eye R
-    400010: Head
-    400012: Jaw
-    400014: L Calf
-    400016: L Clavicle
-    400018: L Foot
-    400020: L Forearm
-    400022: L Hand
-    400024: L HorseLink
-    400026: L Thigh
-    400028: L UpperArm
-    400030: Neck
-    400032: Pelvis
-    400034: R Calf
-    400036: R Clavicle
-    400038: R Foot
-    400040: R Forearm
-    400042: R Hand
-    400044: R HorseLink
-    400046: R Thigh
-    400048: R UpperArm
-    400050: Spine
-    400052: Spine1
-    400054: Spine2
-    400056: Tail
-    400058: Tail1
-    400060: Tail2
-    400062: Tail3
-    400064: Tail4
-    400066: Tail5
-    400068: //RootNode
-    400070: Tiger01
-    400072: Tiger
-    400074: Root
-    4300000: Tiger01
-    4300002: Tiger
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: Tiger01
-    13700002: Tiger
-    2186277476908879412: ImportLogs
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: CG
+  - first:
+      1: 100002
+    second: Ear L
+  - first:
+      1: 100004
+    second: Ear R
+  - first:
+      1: 100006
+    second: Eye L
+  - first:
+      1: 100008
+    second: Eye R
+  - first:
+      1: 100010
+    second: Head
+  - first:
+      1: 100012
+    second: Jaw
+  - first:
+      1: 100014
+    second: L Calf
+  - first:
+      1: 100016
+    second: L Clavicle
+  - first:
+      1: 100018
+    second: L Foot
+  - first:
+      1: 100020
+    second: L Forearm
+  - first:
+      1: 100022
+    second: L Hand
+  - first:
+      1: 100024
+    second: L HorseLink
+  - first:
+      1: 100026
+    second: L Thigh
+  - first:
+      1: 100028
+    second: L UpperArm
+  - first:
+      1: 100030
+    second: Neck
+  - first:
+      1: 100032
+    second: Pelvis
+  - first:
+      1: 100034
+    second: R Calf
+  - first:
+      1: 100036
+    second: R Clavicle
+  - first:
+      1: 100038
+    second: R Foot
+  - first:
+      1: 100040
+    second: R Forearm
+  - first:
+      1: 100042
+    second: R Hand
+  - first:
+      1: 100044
+    second: R HorseLink
+  - first:
+      1: 100046
+    second: R Thigh
+  - first:
+      1: 100048
+    second: R UpperArm
+  - first:
+      1: 100050
+    second: Spine
+  - first:
+      1: 100052
+    second: Spine1
+  - first:
+      1: 100054
+    second: Spine2
+  - first:
+      1: 100056
+    second: Tail
+  - first:
+      1: 100058
+    second: Tail1
+  - first:
+      1: 100060
+    second: Tail2
+  - first:
+      1: 100062
+    second: Tail3
+  - first:
+      1: 100064
+    second: Tail4
+  - first:
+      1: 100066
+    second: Tail5
+  - first:
+      1: 100068
+    second: //RootNode
+  - first:
+      1: 100070
+    second: Tiger01
+  - first:
+      1: 100072
+    second: Tiger
+  - first:
+      1: 100074
+    second: Root
+  - first:
+      4: 400000
+    second: CG
+  - first:
+      4: 400002
+    second: Ear L
+  - first:
+      4: 400004
+    second: Ear R
+  - first:
+      4: 400006
+    second: Eye L
+  - first:
+      4: 400008
+    second: Eye R
+  - first:
+      4: 400010
+    second: Head
+  - first:
+      4: 400012
+    second: Jaw
+  - first:
+      4: 400014
+    second: L Calf
+  - first:
+      4: 400016
+    second: L Clavicle
+  - first:
+      4: 400018
+    second: L Foot
+  - first:
+      4: 400020
+    second: L Forearm
+  - first:
+      4: 400022
+    second: L Hand
+  - first:
+      4: 400024
+    second: L HorseLink
+  - first:
+      4: 400026
+    second: L Thigh
+  - first:
+      4: 400028
+    second: L UpperArm
+  - first:
+      4: 400030
+    second: Neck
+  - first:
+      4: 400032
+    second: Pelvis
+  - first:
+      4: 400034
+    second: R Calf
+  - first:
+      4: 400036
+    second: R Clavicle
+  - first:
+      4: 400038
+    second: R Foot
+  - first:
+      4: 400040
+    second: R Forearm
+  - first:
+      4: 400042
+    second: R Hand
+  - first:
+      4: 400044
+    second: R HorseLink
+  - first:
+      4: 400046
+    second: R Thigh
+  - first:
+      4: 400048
+    second: R UpperArm
+  - first:
+      4: 400050
+    second: Spine
+  - first:
+      4: 400052
+    second: Spine1
+  - first:
+      4: 400054
+    second: Spine2
+  - first:
+      4: 400056
+    second: Tail
+  - first:
+      4: 400058
+    second: Tail1
+  - first:
+      4: 400060
+    second: Tail2
+  - first:
+      4: 400062
+    second: Tail3
+  - first:
+      4: 400064
+    second: Tail4
+  - first:
+      4: 400066
+    second: Tail5
+  - first:
+      4: 400068
+    second: //RootNode
+  - first:
+      4: 400070
+    second: Tiger01
+  - first:
+      4: 400072
+    second: Tiger
+  - first:
+      4: 400074
+    second: Root
+  - first:
+      43: 4300000
+    second: Tiger01
+  - first:
+      43: 4300002
+    second: Tiger
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Tiger01
+  - first:
+      137: 13700002
+    second: Tiger
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -97,16 +263,20 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'L HorseLink'
+      : rotation error = 49.216961 deg\n\t'R HorseLink' : rotation error = 49.216969
+      deg\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -121,25 +291,36 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 0
     normalImportMode: 1
@@ -148,12 +329,197 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 3
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Tiger(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0.0000028155114, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tiger
+      parentName: Tiger(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root
+      parentName: Tiger(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.50000036, y: 0.49999964, z: 0.49999964, w: 0.50000036}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CG
+      parentName: Tiger(Clone)
+      position: {x: -0, y: 0.8549313, z: 0}
+      rotation: {x: -0.5000004, y: 0.4999997, z: 0.49999964, w: 0.5000003}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pelvis
+      parentName: CG
+      position: {x: -0.00000002960157, y: -0.000000014901161, z: 0.16554397}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: Pelvis
+      position: {x: -0.03943962, y: 0.12616862, z: -0.00000030517566}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: Spine1
+      parentName: Spine
+      position: {x: -0.3406855, y: -0.0002722168, z: 0.0000006103495}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine2
+      parentName: Spine1
+      position: {x: -0.34068564, y: -0.00027030945, z: -0.000000610353}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck
+      parentName: Spine2
+      position: {x: -0.31218, y: 0.027302245, z: 1.4551914e-12}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Head
+      parentName: Neck
+      position: {x: -0.18409629, y: -0.00000015258789, z: 8.731149e-13}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000012, z: 1.0000001}
+    - name: Jaw
+      parentName: Head
+      position: {x: 0.15575165, y: 0.17673644, z: 0.0000006103521}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999976}
+    - name: Eye L
+      parentName: Head
+      position: {x: -0.033515625, y: 0.2552192, z: 0.06438596}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1, z: 1.0000001}
+    - name: Eye R
+      parentName: Head
+      position: {x: -0.033515625, y: 0.25521958, z: -0.0643912}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 0.9999997, z: 0.9999997}
+    - name: Ear L
+      parentName: Head
+      position: {x: -0.07350143, y: 0.1086438, z: 0.15024695}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999998}
+    - name: Ear R
+      parentName: Head
+      position: {x: -0.07350159, y: 0.1086444, z: -0.15024698}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 0.9999998}
+    - name: L Clavicle
+      parentName: Neck
+      position: {x: 0.14085281, y: 0.113208465, z: -0.0037197876}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: L UpperArm
+      parentName: L Clavicle
+      position: {x: -0.17774841, y: -0.00000015258789, z: 0.000000076293944}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: L Forearm
+      parentName: L UpperArm
+      position: {x: -0.4235688, y: 0.00000030517577, z: -0.0000001335144}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+    - name: L Hand
+      parentName: L Forearm
+      position: {x: -0.3154072, y: 0, z: 0.000000057220458}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 0.99999994, y: 1.0000008, z: 1.0000008}
+    - name: R Clavicle
+      parentName: Neck
+      position: {x: 0.14085296, y: 0.113209076, z: 0.0037203978}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: R UpperArm
+      parentName: R Clavicle
+      position: {x: -0.17774823, y: -0.00000030517577, z: -0.00000015258789}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000011, z: 1}
+    - name: R Forearm
+      parentName: R UpperArm
+      position: {x: -0.42356884, y: -0.000000076293944, z: -0.0000001335144}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: R Hand
+      parentName: R Forearm
+      position: {x: -0.31540722, y: 0.00000061035155, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: L Thigh
+      parentName: Spine
+      position: {x: 0.12813331, y: 0.032492902, z: 0.1448168}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: L Calf
+      parentName: L Thigh
+      position: {x: -0.34426042, y: 0.000000038146972, z: -0.0000001335144}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: L HorseLink
+      parentName: L Calf
+      position: {x: -0.25661626, y: -0.00000019073485, z: 0.00000012397766}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999997, y: 1, z: 1}
+    - name: L Foot
+      parentName: L HorseLink
+      position: {x: -0.22370815, y: -0.000000038146972, z: -0.0000009918213}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999992, y: 1.0000005, z: 0.9999994}
+    - name: R Thigh
+      parentName: Spine
+      position: {x: 0.12813365, y: 0.032494735, z: -0.14481683}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000005, y: 1.0000013, z: 1.0000005}
+    - name: R Calf
+      parentName: R Thigh
+      position: {x: -0.34425998, y: -0.000000114440915, z: 0.00000021934508}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.9999998}
+    - name: R HorseLink
+      parentName: R Calf
+      position: {x: -0.25661638, y: -0.00000015258789, z: 0.00000021934508}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000013, y: 0.99999994, z: 1.0000011}
+    - name: R Foot
+      parentName: R HorseLink
+      position: {x: -0.22370818, y: -0.000000019073486, z: -0.00000036239624}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000004}
+    - name: Tail
+      parentName: Spine
+      position: {x: 0.27283552, y: -0.09677963, z: -0.00000030517782}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Tail1
+      parentName: Tail
+      position: {x: -0.110569306, y: -0.00019187927, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Tail2
+      parentName: Tail1
+      position: {x: -0.26310238, y: -0.00020019531, z: 2.1827872e-13}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Tail3
+      parentName: Tail2
+      position: {x: -0.25610828, y: -0.0001486969, z: -1.4551915e-13}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: Tail4
+      parentName: Tail3
+      position: {x: -0.19669718, y: -0.00011917114, z: -2.910383e-13}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 0.9999998, z: 1.0000004}
+    - name: Tail5
+      parentName: Tail4
+      position: {x: -0.19533363, y: -0.00019979477, z: 4.3655745e-13}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000004}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -161,13 +527,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: CG
-    hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
