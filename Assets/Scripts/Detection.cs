@@ -35,27 +35,27 @@ public class Detection : MonoBehaviour
                 {
                     case "Tiger":
                         tigerCount++;
-                        UpdateCounter(tigerCounter, "X " + tigerCount, tigerCount);
+                        UpdateCounter(tigerCounter, tigerCount + " X", tigerCount);
                         break;
 
                     case "Deer":
                         deerCount++;
-                        UpdateCounter(deerCounter, "X " + deerCount, deerCount);
+                        UpdateCounter(deerCounter, deerCount + " X", deerCount);
                         break;
 
                     case "Boar":
                         boarCount++;
-                        UpdateCounter(boarCounter, "X " + boarCount, boarCount);
+                        UpdateCounter(boarCounter, boarCount + " X", boarCount);
                         break;
 
                     case "Fox":
                         foxCount++;
-                        UpdateCounter(foxCounter, "X " + foxCount, foxCount);
+                        UpdateCounter(foxCounter, foxCount + " X", foxCount);
                         break;
 
                     case "Rabbit":
                         rabbitCount++;
-                        UpdateCounter(rabbitCounter, "X " + rabbitCount, rabbitCount);
+                        UpdateCounter(rabbitCounter, rabbitCount + " X", rabbitCount);
                         break;
                 }
 

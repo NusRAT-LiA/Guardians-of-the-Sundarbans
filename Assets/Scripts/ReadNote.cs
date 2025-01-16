@@ -26,6 +26,7 @@ public class ReadNote : MonoBehaviour
                 MessagePanel.SetActive(false);
                 Action = false;
                 noteImage.enabled = true;
+                Debug.Log("Note read");
             }
         }
     }

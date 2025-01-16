@@ -47,28 +47,38 @@ public class AttackerBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Tiger"))
+        if (collision.gameObject.CompareTag("AttackTiger"))
         {
+            Debug.Log("Tiger hit!");
+            navMeshAgent.isStopped = true;
             StartCoroutine(PunchTiger());
         }
     }
 
-    IEnumerator PunchTiger()
-{
-    animator.SetBool("IsRunning", false);
-    navMeshAgent.isStopped = true; // Stop the NavMeshAgent
-
-    animator.SetBool("attack", true); // Start punching animation
-
-    while (!IsPlayerInRange())
+    void OnCollisionExit(Collision collision)
     {
-        // Continue punching as long as the player is not in range
-        yield return new WaitForSeconds(1f); // Repeat every second
+        if (collision.gameObject.CompareTag("AttackTiger"))
+        {
+            navMeshAgent.isStopped = false;
+        }
     }
 
-    animator.SetBool("attack", false); // Stop punching animation
-    navMeshAgent.isStopped = false; // Resume NavMeshAgent
-}
+    IEnumerator PunchTiger()
+    {
+        animator.SetBool("IsRunning", false);
+        navMeshAgent.isStopped = true; // Stop the NavMeshAgent
+
+        animator.SetBool("attack", true); // Start punching animation
+
+        while (!IsPlayerInRange())
+        {
+            // Continue punching as long as the player is not in range
+            yield return new WaitForSeconds(1f); // Repeat every second
+        }
+
+        animator.SetBool("attack", false); // Stop punching animation
+        navMeshAgent.isStopped = false; // Resume NavMeshAgent
+    }
 
 
     IEnumerator HandlePlayerEncounter()
