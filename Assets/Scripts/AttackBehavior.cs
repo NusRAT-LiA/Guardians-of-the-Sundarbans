@@ -6,9 +6,10 @@ public class AttackerBehavior : MonoBehaviour
 {
     public Transform tiger; // Reference to the tiger's Transform
     public Transform player; // Reference to the player's Transform
+    public Transform hideout;
     public float affinityRadius = 10f; // Detection range for the player
     public float stopDuration = 10f; // Time to stop when the player is spotted
-    public float resumeChaseDelay = 30f; // Time to wait before chasing the tiger again
+    public float resumeChaseDelay = 5f; // Time to wait before chasing the tiger again
 
     private NavMeshAgent navMeshAgent; // NavMeshAgent component
     private Animator animator;
@@ -39,7 +40,7 @@ public class AttackerBehavior : MonoBehaviour
         }
 
         // Check if the player is within the affinity radius
-        if (!isChasingTiger && Vector3.Distance(transform.position, player.position) < affinityRadius)
+        if (Vector3.Distance(transform.position, player.position) < affinityRadius)
         {
             StartCoroutine(HandlePlayerEncounter());
         }
@@ -87,21 +88,23 @@ public class AttackerBehavior : MonoBehaviour
         isChasingTiger = false;
 
         // Stop and play idle animation
-        navMeshAgent.isStopped = true;
+        // navMeshAgent.isStopped = true;
         animator.SetBool("IsRunning", false);
+        animator.SetBool("attack", false);
 
         // Wait near the player for the specified duration
         yield return new WaitForSeconds(stopDuration);
 
-        // Run away from the player
-        Vector3 runAwayDirection = (transform.position - player.position).normalized;
-        Vector3 runAwayTarget = transform.position + runAwayDirection * 10f;
-        navMeshAgent.SetDestination(runAwayTarget);
+        // Start running to the hideout
+        // navMeshAgent.isStopped = false; // Resume NavMeshAgent
+        navMeshAgent.SetDestination(hideout.position);
+        Debug.Log("Running to hideout");
+        animator.SetBool("IsRunning", true); // Trigger running animation
 
+        // Wait for the delay before allowing further actions
         yield return new WaitForSeconds(resumeChaseDelay);
 
-        // Resume chasing the tiger
-        StartChasingTiger();
+        // Allow further updates and state changes
         isStopping = false;
     }
 
@@ -110,6 +113,13 @@ public class AttackerBehavior : MonoBehaviour
         isChasingTiger = true;
         navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(tiger.position);
+    }
+
+    void StartRunningAway()
+    {
+        isChasingTiger = false;
+        navMeshAgent.isStopped = false;
+        navMeshAgent.SetDestination(hideout.position);
     }
 
     bool IsPlayerInRange()
