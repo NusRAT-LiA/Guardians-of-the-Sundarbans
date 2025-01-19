@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Detection : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Detection : MonoBehaviour
 
     void Update()
     {
+
         if (detectedAnimal != null && Input.GetKeyDown(KeyCode.E))
         {
             if (!detectedAnimals.Contains(detectedAnimal))
@@ -124,5 +126,15 @@ public class Detection : MonoBehaviour
 
         // Assuming you're using Unity's SceneManager
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2");
+    }
+
+    private void UnlockNextLevel()
+    {
+        if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+        }
     }
 }
