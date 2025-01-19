@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
 
 public class Detection : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class Detection : MonoBehaviour
     private int rabbitCount = 0;
 
     private Collider detectedAnimal;
-    private HashSet<Collider> detectedAnimals = new HashSet<Collider>(); // Tracks detected animals
+    private HashSet<Collider> detectedAnimals = new HashSet<Collider>(); 
 
     void Update()
     {
@@ -27,10 +26,8 @@ public class Detection : MonoBehaviour
         {
             if (!detectedAnimals.Contains(detectedAnimal))
             {
-                // Add the animal to the detected list
                 detectedAnimals.Add(detectedAnimal);
 
-                // Update counters based on the tag
                 switch (detectedAnimal.tag)
                 {
                     case "Tiger":
@@ -59,8 +56,10 @@ public class Detection : MonoBehaviour
                         break;
                 }
 
-                // Optional: Mark the animal visually or logically as detected
                 MarkAnimalAsDetected(detectedAnimal.gameObject);
+
+                // Check for level transition conditions
+                CheckLevelTransition();
             }
         }
     }
@@ -80,7 +79,7 @@ public class Detection : MonoBehaviour
         else if (count <= 15)
             return Color.yellow;
         else
-            return new Color(1.0f, 0.5f, 0.0f); // Orange again
+            return new Color(0.0f, 1.0f, 0.0f); // Green
     }
 
     private void OnTriggerEnter(Collider other)
@@ -102,11 +101,28 @@ public class Detection : MonoBehaviour
 
     private void MarkAnimalAsDetected(GameObject animal)
     {
-        // Example: Change color or material to indicate detection
         Renderer renderer = animal.GetComponent<Renderer>();
         if (renderer != null)
         {
-            renderer.material.color = Color.gray; // Change to gray as a visual marker
+            renderer.material.color = Color.gray; 
         }
+    }
+
+    private void CheckLevelTransition()
+    {
+        if (tigerCount == 2 && deerCount == 10 && foxCount == 10 && boarCount == 15 && rabbitCount > 15)
+        {
+            TransitToLevel2();
+        }
+    }
+
+    private void TransitToLevel2()
+    {
+        Debug.Log("Conditions met! Transitioning to Level 2.");
+        // Implement your level transition logic here
+        // Example: Load the next scene or trigger an animation
+
+        // Assuming you're using Unity's SceneManager
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2");
     }
 }
