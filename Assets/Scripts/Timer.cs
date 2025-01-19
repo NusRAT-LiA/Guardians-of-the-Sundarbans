@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Timer : MonoBehaviour
             remainingTime -= Time.deltaTime;
         }
         else if (remainingTime <= 0){
-            remainingTime = 0;
+            remainingTime = 0;  
+            SceneManager.LoadScene("Menu");
         }
         
         int minutes = Mathf.FloorToInt(remainingTime / 60);

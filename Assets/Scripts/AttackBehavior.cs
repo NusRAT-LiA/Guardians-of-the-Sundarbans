@@ -10,10 +10,10 @@ public class AttackerBehavior : MonoBehaviour
     public Transform hideout; // Reference to the hideout's Transform
     public float affinityRadius = 10f; // Detection range for the player
     public float stopDuration = 5f; // Time to stop when the player is spotted
+    public float resumeChaseDelay = 5f; // Time to wait before chasing the tiger again
     public float hideoutRadius = 10f; // Radius around hideout to reset the attacker's state
-    public TextMeshProUGUI preventionCounterText; // Reference to the shared UI element for the total count
-    public float minStartDelay = 2f; // Minimum random start delay
-    public float maxStartDelay = 100f; // Maximum random start delay
+    [SerializeField] int attackPrevented = 0; // Number of times the player has prevented the attack
+    [SerializeField] TextMeshProUGUI preventionCounterText;
 
     private NavMeshAgent navMeshAgent; // NavMeshAgent component
     private Animator animator;
@@ -21,7 +21,6 @@ public class AttackerBehavior : MonoBehaviour
     private bool isStopping = false; // Whether the attacker is stopping near the player
     private bool hasEncounteredPlayer = false; // Whether the player encounter logic has already occurred
 
-    // Static variable to keep track of the total count
     private static int totalAttackPrevented = 0;
 
     void Start()
@@ -29,12 +28,11 @@ public class AttackerBehavior : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        StartCoroutine(StartAfterRandomDelay());
+        StartChasingTiger();
     }
 
     void Update()
     {
-        // Update the total prevention count UI
         if (preventionCounterText != null)
         {
             preventionCounterText.text = "Total Attacks Prevented: " + totalAttackPrevented;
@@ -46,6 +44,7 @@ public class AttackerBehavior : MonoBehaviour
         {
             navMeshAgent.SetDestination(tiger.position);
 
+            // Play running animation when moving
             if (navMeshAgent.velocity.magnitude > 0.1f)
                 animator.SetBool("IsRunning", true);
             else
@@ -55,18 +54,58 @@ public class AttackerBehavior : MonoBehaviour
         if (!hasEncounteredPlayer && Vector3.Distance(transform.position, player.position) < affinityRadius)
         {
             StartCoroutine(HandlePlayerEncounter());
-            totalAttackPrevented++; 
+            totalAttackPrevented++;
         }
 
+        // Check if the attacker is within range of the hideout
         if (!isChasingTiger && Vector3.Distance(transform.position, hideout.position) < hideoutRadius)
         {
             ResetToChaseTiger();
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("AttackTiger"))
+        {
+            Debug.Log("Tiger hit!");
+            navMeshAgent.isStopped = true;
+            StartCoroutine(PunchTiger());
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("AttackTiger"))
+        {
+            navMeshAgent.isStopped = false;
+        }
+    }
+
+    IEnumerator PunchTiger()
+    {
+        animator.SetBool("IsRunning", false);
+        navMeshAgent.isStopped = true; // Stop the NavMeshAgent
+
+        animator.SetBool("attack", true); // Start punching animation
+
+        yield return new WaitForSeconds(5);
+
+        SceneManager.LoadScene("Lost");
+
+        while (!IsPlayerInRange())
+        {
+            // Continue punching as long as the player is not in range
+            yield return new WaitForSeconds(1f); // Repeat every second
+        }
+
+        animator.SetBool("attack", false); // Stop punching animation
+        navMeshAgent.isStopped = false; // Resume NavMeshAgent
+    }
+
     IEnumerator HandlePlayerEncounter()
     {
-        hasEncounteredPlayer = true; 
+        hasEncounteredPlayer = true; // Mark player as encountered
         isStopping = true;
         isChasingTiger = false;
         navMeshAgent.isStopped = true;
@@ -95,18 +134,22 @@ public class AttackerBehavior : MonoBehaviour
         navMeshAgent.SetDestination(tiger.position);
     }
 
+    void StartRunningAway()
+    {
+        isChasingTiger = false;
+        navMeshAgent.isStopped = false;
+        navMeshAgent.SetDestination(hideout.position);
+    }
+
+    bool IsPlayerInRange()
+    {
+        return Vector3.Distance(transform.position, player.position) < affinityRadius;
+    }
+
     void ResetToChaseTiger()
     {
         Debug.Log("Reached hideout. Resetting to chase the tiger.");
-        hasEncounteredPlayer = false;
-        StartChasingTiger(); 
-    }
-
-    IEnumerator StartAfterRandomDelay()
-    {
-        float randomDelay = Random.Range(minStartDelay, maxStartDelay);
-        yield return new WaitForSeconds(randomDelay);
-
-        StartChasingTiger();
+        hasEncounteredPlayer = false; // Reset the player encounter flag
+        StartChasingTiger(); // Resume chasing the tiger
     }
 }
