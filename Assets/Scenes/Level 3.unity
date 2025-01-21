@@ -10139,10 +10139,10 @@ MonoBehaviour:
   hideout: {fileID: 1151925557}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 150
 --- !u!64 &311962586
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10707,10 +10707,10 @@ MonoBehaviour:
   hideout: {fileID: 980528387}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 30
 --- !u!64 &321027010
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13324,10 +13324,10 @@ MonoBehaviour:
   hideout: {fileID: 1719130826}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 130
 --- !u!64 &430684989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14491,6 +14491,44 @@ RectTransform:
   m_AnchoredPosition: {x: 143105.05, y: -312587.88}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!84 &473742818
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &476600898 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1655403738057260, guid: 8701839b7c9d5fe4387a46bd8530957f, type: 3}
@@ -23150,8 +23188,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288412310
+  m_fontColor: {r: 0.58775365, g: 0.9811321, b: 0.6061438, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -23234,7 +23272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -333, y: 299}
+  m_AnchoredPosition: {x: -376, y: 347}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &699895018
@@ -24670,44 +24708,6 @@ RectTransform:
   m_AnchoredPosition: {x: -276, y: 129}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!84 &732637185
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &733760443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27224,10 +27224,10 @@ MonoBehaviour:
   hideout: {fileID: 1759247592}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 90
 --- !u!64 &826111761
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29132,10 +29132,10 @@ MonoBehaviour:
   hideout: {fileID: 977818386}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 50
 --- !u!64 &905285612
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38013,10 +38013,10 @@ MonoBehaviour:
   hideout: {fileID: 1151925557}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 10
 --- !u!64 &1169675370
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48321,8 +48321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 470, y: 308}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 604.20605, y: 347}
+  m_SizeDelta: {x: 296.412, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516385232
 MonoBehaviour:
@@ -48353,8 +48353,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4286216954
+  m_fontColor: {r: 0.9811321, g: 0.47668213, b: 0.47668213, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -50227,10 +50227,10 @@ MonoBehaviour:
   hideout: {fileID: 1530722232}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 190
 --- !u!64 &1584761638
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60376,10 +60376,10 @@ MonoBehaviour:
   hideout: {fileID: 552492169}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 70
 --- !u!64 &1957727730
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63165,10 +63165,10 @@ MonoBehaviour:
   hideout: {fileID: 1530722232}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 110
 --- !u!64 &2072297634
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66335,10 +66335,10 @@ MonoBehaviour:
   hideout: {fileID: 791842997}
   affinityRadius: 10
   stopDuration: 5
+  resumeChaseDelay: 5
   hideoutRadius: 10
   preventionCounterText: {fileID: 1516385232}
-  minStartDelay: 2
-  maxStartDelay: 20
+  startDelay: 170
 --- !u!64 &2146124232
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -89828,7 +89828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   computeOverride: 0
-  _depthTex: {fileID: 732637185}
+  _depthTex: {fileID: 473742818}
   bakedDepthTex: {fileID: 0}
   _waves:
   - amplitude: 0.30540264

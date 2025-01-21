@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
         }
         else if (remainingTime <= 0){
             remainingTime = 0;  
-            SceneManager.LoadScene("Menu");
+            // SceneManager.LoadScene("Menu");
         }
         
         int minutes = Mathf.FloorToInt(remainingTime / 60);

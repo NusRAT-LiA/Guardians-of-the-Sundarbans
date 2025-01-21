@@ -4,7 +4,6 @@ using UnityEngine.AI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-
 public class AttackerBehavior : MonoBehaviour
 {
     public Transform tiger; // Reference to the tiger's Transform
@@ -14,8 +13,10 @@ public class AttackerBehavior : MonoBehaviour
     public float stopDuration = 5f; // Time to stop when the player is spotted
     public float resumeChaseDelay = 5f; // Time to wait before chasing the tiger again
     public float hideoutRadius = 10f; // Radius around hideout to reset the attacker's state
-    [SerializeField] int attackPrevented = 0; // Number of times the player has prevented the attack
     [SerializeField] TextMeshProUGUI preventionCounterText;
+    // public float minStartDelay = 2f; // Minimum random start delay
+    // public float maxStartDelay = 10f;
+    public int startDelay;
 
     private NavMeshAgent navMeshAgent; // NavMeshAgent component
     private Animator animator;
@@ -30,7 +31,12 @@ public class AttackerBehavior : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        StartChasingTiger();
+        // Ensure the attacker doesn't start chasing immediately
+        isChasingTiger = false;
+        navMeshAgent.isStopped = true;
+
+        // Start the coroutine to delay the start of chasing
+        StartCoroutine(StartAfterRandomDelay());
     }
 
     void Update()
@@ -64,6 +70,15 @@ public class AttackerBehavior : MonoBehaviour
         {
             ResetToChaseTiger();
         }
+    }
+
+    IEnumerator StartAfterRandomDelay()
+    {
+        // Wait for the specified delay time
+        yield return new WaitForSeconds(startDelay);
+
+        // Start chasing the tiger after the delay
+        StartChasingTiger();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -134,6 +149,9 @@ public class AttackerBehavior : MonoBehaviour
         isChasingTiger = true;
         navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(tiger.position);
+
+        // Play the running animation
+        animator.SetBool("IsRunning", true);
     }
 
     void StartRunningAway()
